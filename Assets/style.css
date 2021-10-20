@@ -32,7 +32,7 @@ textarea{
 
 .row {
   white-space: pre-wrap;
-  height: 80px;
+  height: 50px;
   border-top: 1px solid white;;
 }
 
@@ -58,11 +58,12 @@ textarea{
 }
 
 .saveBtn {
-  border-left: 1px solid black;
+  /* add border to saveBtn */
+  border: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   background-color: #06AED5;
-  color: white;
+  color:white;
 }
 
 .saveBtn i:hover {
