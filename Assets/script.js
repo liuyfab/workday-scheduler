@@ -37,15 +37,16 @@ $(".saveBtn").on('click', function(){
      console.log('log: scheduleTime ', scheduleTime);
      console.log('log: scheduleId ', scheduleId);
 
-      if(parseInt(currentHour) < parseInt(scheduleTime)){
-          console.log("currentHour < scheduleTime")
-          $(scheduleId).addClass("future");
+    if(currentHour < scheduleTime ){
+        console.log("currentHour > scheduleTime")
+          $(scheduleId).addClass("future");  
       }
-      else if(currentHour > scheduleTime ){
+    
+    else if(currentHour > scheduleTime ){
         console.log("currentHour > scheduleTime")
           $(scheduleId).addClass("past");  
       }
-      else{
+    else{
         console.log("currentHour = scheduleTime")
          $(scheduleId).addClass("present");
       }
