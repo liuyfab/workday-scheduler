@@ -1,7 +1,8 @@
-
+$(document).ready(function() {
 $("#currentDay").text(moment().format('dddd MMMM Do YYYY, h:mm a'));
 // Moment Current time 
-var currentHour = moment();
+var currentHour = moment().hour();
+console.log('log: currentHour ', currentHour);
 
 //on click of save button store values in Local Storage using LocalStorage.setItem()
 $(".saveBtn").on('click', function(){
@@ -15,19 +16,44 @@ $(".saveBtn").on('click', function(){
     localStorage.setItem(hour, event);
 });
 
-$('.row').each(function(event){  
+
+ $('.hour').each(function(index){
+    var hour = $(this).text()
+    console.log(index + ": " + $(this).text())
+       
     //grab the stored value from LS and show ininside the textarea
-        var text = localStorage.getItem(event);
-        //console.log("Grab value from LS", text);
+    console.log('log: hour ', hour);
+    var text = localStorage.getItem(hour);
+    console.log("Grab value from LS", text);
+    $(this).siblings(".event-text").val(text)
+    /*var loadingBlock ;
+    console.log(loadingBlock);
+    loadingBlock.siblings(".event-text").text(text);*/
+
+        
       //Background color changed based on the current time whether its is past, prest or future.
-      var hour = $(this).siblings(".hour").text();  
-      if(currentHour.isAfter(hour)){
-          $(".row.event").addClass('.future');
+     var scheduleTime = hour.split(" ")[0];
+     var scheduleId = "#" + scheduleTime;
+     console.log('log: scheduleTime ', scheduleTime);
+     console.log('log: scheduleId ', scheduleId);
+
+      if(parseInt(currentHour) < parseInt(scheduleTime)){
+          console.log("currentHour < scheduleTime")
+          $(scheduleId).addClass("future");
       }
-      else if(currentHour.isBefore(hour)){
-          $(".row.event").addClass('.past');  
+      else if(currentHour > scheduleTime ){
+        console.log("currentHour > scheduleTime")
+          $(scheduleId).addClass("past");  
       }
       else{
-          $(".row.event").addClass('.present');
-        }
+        console.log("currentHour = scheduleTime")
+         $(scheduleId).addClass("present");
+      }
+     
     })
+
+   /* var local = $('#9 .event-text').val();
+    console.log('log: local ', local);
+    var storage = localStorage.getItem('9 am');
+   console.log('log: storage ', storage); */
+})
