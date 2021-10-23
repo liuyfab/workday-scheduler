@@ -12,7 +12,7 @@ Third Party API Challenge
 8. Users can click on an item to edit and delete all of the text, then click save to delete the item entirely from the application and from localStorage. 
 
 # Screenshot
-![Landing Page](https://github.com/liuyfab/code-quiz/blob/main/images/Screenshot%201.png?raw=true)
+![Landing Page](https://github.com/liuyfab/workday-scheduler/blob/main/Assets/Screenshot.png?raw=true)
 
 # Delpoyment Application
 https://liuyfab.github.io/workday-scheduler/
