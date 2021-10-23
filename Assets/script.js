@@ -29,7 +29,7 @@ $(".saveBtn").on('click', function(){
     /*var loadingBlock ;
     console.log(loadingBlock);
     loadingBlock.siblings(".event-text").text(text);*/
-
+    
         
       //Background color changed based on the current time whether its is past, prest or future.
      var scheduleTime = hour.split(" ")[0];
@@ -44,7 +44,7 @@ $(".saveBtn").on('click', function(){
     
     else if(currentHour > scheduleTime ){
         console.log("currentHour > scheduleTime")
-          $(scheduleId).addClass("past");  
+        $(scheduleId).addClass("past");  
       }
     else{
         console.log("currentHour = scheduleTime")
@@ -52,9 +52,8 @@ $(".saveBtn").on('click', function(){
       }
      
     })
-
+})
    /* var local = $('#9 .event-text').val();
     console.log('log: local ', local);
     var storage = localStorage.getItem('9 am');
    console.log('log: storage ', storage); */
-})
